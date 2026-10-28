@@ -75,7 +75,7 @@ cp -r ./skills/psychoactive-cognition ~/.codex/skills/
 
 Install the package into your environment:
 ```bash
-git clone https://github.com/Samagra-Singh/Neurochemical-AI-Cognition.git
+git clone https://github.com/sam-y2k/Psychoactive-AI-Cognition.git
 cd AI-psychoactive-code
 pip install -e .
 ```
