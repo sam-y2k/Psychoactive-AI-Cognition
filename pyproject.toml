@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psychoactive"
+version = "0.1.0"
+description = "Universal Neurochemical Cognitive Meta-Layer for Large Language Models"
+authors = [
+    { name = "Samagra Singh", email = "samagra@independent.research" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.0.0",
+    "numpy>=1.24.0",
+    "litellm>=1.40.0"
+]
+
+[project.scripts]
+psychoactive = "psychoactive.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["psychoactive*"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "black>=24.0.0",
+    "ruff>=0.5.0"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
