@@ -30,7 +30,23 @@ from psychoactive.integration.grounder import IntegrationGrounder, GroundedArtif
 
 from psychoactive.session import NeuroSession
 
-__version__ = "0.1.0"
+# Mathematical Solvers
+from psychoactive.math.procrustes import OrthogonalProcrustesSolver, StiefelResult
+from psychoactive.math.tda import PersistentHomologyEngine, compute_newman_modularity
+from psychoactive.math.langevin import LangevinAttractorSimulator, AttractorLandscape, kramers_escape_rate
+
+# Native PyTorch Neural Modules
+from psychoactive.nn.dmn_attention import REBUSMultiHeadAttention, AttentionLogitDecomposition
+from psychoactive.nn.retrograde_layer import CB1RetrogradeLayer, GatingComponents
+from psychoactive.nn.entropy import compute_attention_entropy, compute_effective_attention_horizon
+
+# Deterministic Verification & Benchmarks
+from psychoactive.verification.ldm import LateralDivergenceEvaluator, LDMResult
+from psychoactive.verification.z3_verifier import Z3ConstraintVerifier, VerificationProof
+from psychoactive.benchmarks.rat_benchmark import RATBenchmarkRunner, RATItem
+from psychoactive.benchmarks.ablation_runner import AblationBenchmarkRunner, AblationReport
+
+__version__ = "0.2.0"
 
 __all__ = [
     # Pharmacological Core
@@ -43,6 +59,30 @@ __all__ = [
     "REBUSEngine",
     "RetrogradeFilter",
     "StiefelProjector",
+    # Mathematical Solvers
+    "OrthogonalProcrustesSolver",
+    "StiefelResult",
+    "PersistentHomologyEngine",
+    "compute_newman_modularity",
+    "LangevinAttractorSimulator",
+    "AttractorLandscape",
+    "kramers_escape_rate",
+    # PyTorch Neural Modules
+    "REBUSMultiHeadAttention",
+    "AttentionLogitDecomposition",
+    "CB1RetrogradeLayer",
+    "GatingComponents",
+    "compute_attention_entropy",
+    "compute_effective_attention_horizon",
+    # Verification & Benchmarks
+    "LateralDivergenceEvaluator",
+    "LDMResult",
+    "Z3ConstraintVerifier",
+    "VerificationProof",
+    "RATBenchmarkRunner",
+    "RATItem",
+    "AblationBenchmarkRunner",
+    "AblationReport",
     # Templates (Jack of All Trades)
     "NeuroTemplate",
     "BreakthroughResult",

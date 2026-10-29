@@ -2,6 +2,7 @@
 Unit tests for the psychoactive CLI tool.
 """
 
+import sys
 import pytest
 import subprocess
 import json
@@ -36,7 +37,7 @@ def test_cli_template_selection():
 def test_cli_execution_mock():
     """Verify running the CLI module via subprocess produces expected formatted output."""
     cmd = [
-        "python", "-m", "psychoactive.cli",
+        sys.executable, "-m", "psychoactive.cli",
         "run", "Break corporate sales email fatigue",
         "--template", "sales",
         "--compound", "thc",
@@ -51,7 +52,7 @@ def test_cli_execution_mock():
 def test_cli_json_output():
     """Verify --json flag outputs parseable JSON telemetry."""
     cmd = [
-        "python", "-m", "psychoactive.cli",
+        sys.executable, "-m", "psychoactive.cli",
         "run", "Design lock-free queue",
         "--model", "mock",
         "--json"
